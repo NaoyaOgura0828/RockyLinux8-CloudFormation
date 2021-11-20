@@ -30,12 +30,6 @@ Parameters:
     ConstraintDescription: must be the name of an existing EC2 KeyPair.
   OriginAMI:
     Type: String
-  RootPassword:
-    Type: String
-  UserName:
-    Type: String
-  UserPassword:
-    Type: String
 
 Mappings:
   AzMap:
@@ -111,46 +105,26 @@ Resources:
       Version: !Ref CompVer
       Platform: !Ref Platform
       Data: !Sub
-        - |
-          name: CreatingDesktopEnvironment
-          description: Build a Japanese desktop environment.
-          schemaVersion: 1.0
+        |
+        name: CreatingDesktopEnvironment
+        description: Build a Japanese desktop environment.
+        schemaVersion: 1.0
 
-          phases:
-            - name: build
-              steps:
-                - name: CreatingDesktopEnvironment
-                  action: ExecuteBash
-                  inputs:
-                    commands:
-                      - sudo passwd rocky
-                      - ${USER_PASSWORD}
-                      - sudo passwd root
-                      - ${ROOT_PASSWORD}
-                      - ${ROOT_PASSWORD}
-                      - su - root
-                      - ${ROOT_PASSWORD}
-                      - dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y
-                      - dnf install xrdp tigervnc-server -y
-                      - systemctl enable xrdp
-                      - systemctl start xrdp
-                      - dnf group install "Server with GUI" -y
-                      - dnf install gnome-tweak-tool -y
-                      - dnf -y install langpacks-ja glibc-langpack-ja.x86_64
-                      - localectl set-locale LANG=ja_JP.utf8
-                      - firewall-cmd --permanent --add-port=3389/tcp
-                      - systemctl restart firewalld.service
-                      - dnf update -y
-        - {
-            USER_PASSWORD: !Ref UserPassword,
-            ROOT_PASSWORD: !Ref RootPassword,
-            #   {'Fn::ImportValue': !Sub '${SystemName}-${EnvType}-ecs-cluster-arn'},
-            # iS_ASSIGN_PUBLIC_IP: !Ref isAssignPublicIp,
-            # SECURITY_GROUPS:
-            #   {'Fn::ImportValue': !Sub '${SystemName}-${EnvType}-ecs-sg'},
-            # SUBNETS:
-            #   {'Fn::ImportValue': !Sub '${SystemName}-${EnvType}-public-subnet1'},
-          }
+        phases:
+          - name: build
+            steps:
+              - name: CreatingDesktopEnvironment
+                action: ExecuteBash
+                inputs:
+                  commands:
+                    - sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y
+                    - sudo dnf install xrdp tigervnc-server -y
+                    - sudo systemctl enable xrdp
+                    - sudo systemctl start xrdp
+                    - sudo dnf group install "Server with GUI" -y
+                    - sudo dnf install gnome-tweak-tool -y
+                    - sudo dnf -y install langpacks-ja glibc-langpack-ja.x86_64
+                    - sudo dnf update -y
       Tags:
         Name: !Sub
           - ${SystemName}-${EnvType}-ami-comp

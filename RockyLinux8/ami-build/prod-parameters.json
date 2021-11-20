@@ -43,18 +43,6 @@
         {
             "ParameterKey": "OriginAMI",
             "ParameterValue": "ami-01c6603b0b5d545ec"
-        },
-        {
-            "ParameterKey": "RootPassword",
-            "ParameterValue": "rootpass"
-        },
-        {
-            "ParameterKey": "UserName",
-            "ParameterValue": "user_name"
-        },
-        {
-            "ParameterKey": "UserPassword",
-            "ParameterValue": "password"
         }
     ]
 }
