@@ -1,0 +1,15 @@
+{
+    "Parameters": [
+        {
+            "ParameterKey": "SystemName",
+            "ParameterValue": "RockyLinux8"
+        },
+        {
+            "ParameterKey": "EnvType",
+            "ParameterValue": "prod"
+        }
+    ],
+    "Capabilities": [
+        "CAPABILITY_NAMED_IAM"
+    ]
+}

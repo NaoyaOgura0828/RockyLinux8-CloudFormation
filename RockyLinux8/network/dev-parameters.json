@@ -1,0 +1,20 @@
+{
+    "Parameters": [
+        {
+            "ParameterKey": "SystemName",
+            "ParameterValue": "RockyLinux8"
+        },
+        {
+            "ParameterKey": "EnvType",
+            "ParameterValue": "dev"
+        },
+        {
+            "ParameterKey": "VPCCidrBlock",
+            "ParameterValue": "200.0.0.0/16"
+        },
+        {
+            "ParameterKey": "PublicSubnetCidrBlock",
+            "ParameterValue": "200.0.1.0/24"
+        }
+    ]
+}

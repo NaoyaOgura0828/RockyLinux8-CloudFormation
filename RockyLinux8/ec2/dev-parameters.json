@@ -1,0 +1,36 @@
+{
+    "Parameters": [
+        {
+            "ParameterKey": "SystemName",
+            "ParameterValue": "RockyLinux8"
+        },
+        {
+            "ParameterKey": "EnvType",
+            "ParameterValue": "dev"
+        },
+        {
+            "ParameterKey": "AMIID",
+            "ParameterValue": ""
+        },
+        {
+            "ParameterKey": "InstanceType",
+            "ParameterValue": "m5a.xlarge"
+        },
+        {
+            "ParameterKey": "IsEncrypted",
+            "ParameterValue": "false"
+        },
+        {
+            "ParameterKey": "VolumeSize",
+            "ParameterValue": "10"
+        },
+        {
+            "ParameterKey": "VolumeType",
+            "ParameterValue": "gp2"
+        },
+        {
+            "ParameterKey": "KeyName",
+            "ParameterValue": "RockyLinux8-dev"
+        }
+    ]
+}

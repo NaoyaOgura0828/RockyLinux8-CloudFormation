@@ -1,0 +1,60 @@
+{
+    "Parameters": [
+        {
+            "ParameterKey": "SystemName",
+            "ParameterValue": "RockyLinux8"
+        },
+        {
+            "ParameterKey": "EnvType",
+            "ParameterValue": "prod"
+        },
+        {
+            "ParameterKey": "RecipeVer",
+            "ParameterValue": "1.0.0"
+        },
+        {
+            "ParameterKey": "CompVer",
+            "ParameterValue": "1.0.0"
+        },
+        {
+            "ParameterKey": "Platform",
+            "ParameterValue": "Linux"
+        },
+        {
+            "ParameterKey": "InstanceType",
+            "ParameterValue": "m5a.xlarge"
+        },
+        {
+            "ParameterKey": "IsEncrypted",
+            "ParameterValue": "true"
+        },
+        {
+            "ParameterKey": "VolumeSize",
+            "ParameterValue": "10"
+        },
+        {
+            "ParameterKey": "VolumeType",
+            "ParameterValue": "gp2"
+        },
+        {
+            "ParameterKey": "KeyName",
+            "ParameterValue": "RockyLinux8-prod"
+        },
+        {
+            "ParameterKey": "OriginAMI",
+            "ParameterValue": "ami-01c6603b0b5d545ec"
+        },
+        {
+            "ParameterKey": "RootPassword",
+            "ParameterValue": "rootpass"
+        },
+        {
+            "ParameterKey": "UserName",
+            "ParameterValue": "user_name"
+        },
+        {
+            "ParameterKey": "UserPassword",
+            "ParameterValue": "password"
+        }
+    ]
+}
