@@ -1,10 +1,9 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: SecurityGroup
+Description: SecurityGroup for RockyLinux8
 
 Parameters:
   SystemName:
     Type: String
-    Default: xxxx
     AllowedPattern: '[a-zA-Z0-9-]*'
   EnvType:
     Description: Environment type.
