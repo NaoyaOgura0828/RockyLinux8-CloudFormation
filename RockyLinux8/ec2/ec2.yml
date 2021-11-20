@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: EC2
+Description: EC2 for RockyLinux8
 
 Parameters:
   SystemName:
@@ -61,7 +61,7 @@ Resources:
       EbsOptimized: false
       SourceDestCheck: true
       BlockDeviceMappings:
-        - DeviceName: '/dev/xvda'
+        - DeviceName: '/dev/sda1'
           Ebs:
             Encrypted: !Ref IsEncrypted
             VolumeSize: !Ref VolumeSize
