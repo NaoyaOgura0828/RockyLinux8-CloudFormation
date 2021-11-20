@@ -101,7 +101,7 @@ Resources:
         - {SystemName: !Ref SystemName, EnvType: !Ref EnvType}
       Path: /
       Roles:
-        - !Ref Roleec2
+        - !Ref RoleEC2
 
 Outputs:
   InstanceProfileImageBuilder:
@@ -111,7 +111,7 @@ Outputs:
         - ${SystemName}-${EnvType}-profile-ami-build-${AWS::Region}
         - {SystemName: !Ref SystemName, EnvType: !Ref EnvType}
   InstanceProfileEC2:
-    Value: !Ref InstanceProfileec2
+    Value: !Ref InstanceProfileEC2
     Export:
       Name: !Sub
         - ${SystemName}-${EnvType}-profile-ec2-${AWS::Region}
