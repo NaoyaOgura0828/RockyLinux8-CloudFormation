@@ -113,7 +113,7 @@ Resources:
       Data: !Sub
         - |
           name: CreatingDesktopEnvironment
-          description: Set the password for the default user and the root user. And prepare a Japanese desktop environment.
+          description: Build a Japanese desktop environment.
           schemaVersion: 1.0
 
           phases:
@@ -139,6 +139,7 @@ Resources:
                       - dnf -y install langpacks-ja glibc-langpack-ja.x86_64
                       - localectl set-locale LANG=ja_JP.utf8
                       - firewall-cmd --permanent --add-port=3389/tcp
+                      - systemctl restart firewalld.service
                       - dnf update -y
         - {
             USER_PASSWORD: !Ref UserPassword,
