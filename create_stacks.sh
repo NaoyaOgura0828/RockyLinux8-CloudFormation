@@ -1,7 +1,5 @@
 #!/bin/sh
 
-. ./.env_vars
-
 if [ $# -ne 1 ]; then
     echo "      $0 <ENV_TYPE(dev|stg|prod)>"
     exit 1
