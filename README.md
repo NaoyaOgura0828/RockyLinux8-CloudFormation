@@ -206,7 +206,7 @@ $ ./create_stack.sh ${環境名}
 
 ```Bash
 # 日本語設定を適用
-$ sodo localectl set-locale LANG=ja_JP.utf8
+$ sudo localectl set-locale LANG=ja_JP.utf8
 
 # RDP ポートの許可
 $ sudo firewall-cmd --permanent --add-port=3389/tcp
@@ -275,7 +275,7 @@ $ TOKEN=`curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-met
     <br>
     https://docs.aws.amazon.com/ja_jp/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets-execute.html
 - EC2の構成は`\RockyLinux8\ec2\{環境名}-parameters.json`内で任意に行うことが出来る。
-
+- デフォルトユーザー名は`rocky`である。
 <br>
 
 ### 推奨される拡張機能
