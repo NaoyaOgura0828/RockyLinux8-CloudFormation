@@ -29,10 +29,10 @@
 但しポリシー要件によってAdmin権限が許可されない場合は構築リソースによって最小権限とする事。
 <br>
 
-    ```text
-    # ユーザーポリシー
-    arn:aws:iam::aws:policy/AdministratorAccess
-    ```
+```text
+# ユーザーポリシー
+arn:aws:iam::aws:policy/AdministratorAccess
+```
 
 <br>
 
