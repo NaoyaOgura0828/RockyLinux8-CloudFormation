@@ -81,7 +81,7 @@
 2. キーペア名を登録する。
 <br>
 `\RockyLinux8\ami-build`及び`RockyLinux8\ec2`内の`{環境名}-parameters.json`へキーペア名を設定する。
-
+<br>
     ```json
             {
                 "ParameterKey": "KeyName",
@@ -94,6 +94,7 @@
 3. 展開したいNetworkを設定する。
 <br>
 `\RockyLinux8\network\{環境名}-parameters.json`に任意の`CIDR`を設定する。
+<br>
     ```json
     {
         "Parameters": [
@@ -122,7 +123,8 @@
 4. 構築リソースを設定する。
 <br>
 `create_stacks.sh`内の**`# 最初に実行する`のみ**をコメントアウト解除する。
-    ```Bash
+<br>
+    ```shell
     #####################################
     # 最初に実行する
     #####################################
@@ -151,6 +153,7 @@
 `\RockyLinux8\ec2\{環境名}-parameters.json`内の`AMIID`へペーストする。
 <br>
 **`ImageBuilder`によって`AMI`は自動で作成されるが時間がかかるので注意を要する。**
+<br>
     ```json
             {
                 "ParameterKey": "AMIID",
@@ -163,7 +166,8 @@
 7. EC2構築を設定する。
 <br>
 `create_stacks.sh`内の**`create_stack ec2`のみ**をコメントアウト解除する。
-    ```Bash
+<br>
+    ```shell
     #####################################
     # 最初に実行する
     #####################################
@@ -192,19 +196,21 @@
 <br>
 
 9. EC2インスタンスへSSH接続後、Bashで以下の設定を行う。
-    ```Bash
-    # 日本語設定を適用
-    $ sodo localectl set-locale LANG=ja_JP.utf8
+<br>
+     ```Bash
+     # 日本語設定を適用
+     $ sodo localectl set-locale LANG=ja_JP.utf8
 
-    # RDP ポートの許可
-    $ sudo firewall-cmd --permanent --add-port=3389/tcp
-    # firewalld 再起動
-    $ sudo systemctl restart firewalld.service
-    ```
+     # RDP ポートの許可
+     $ sudo firewall-cmd --permanent --add-port=3389/tcp
+     # firewalld 再起動
+     $ sudo systemctl restart firewalld.service
+     ```
 
 <br>
 
 10. Bashでユーザーアカウントを作成する。
+<br>
     ```Bash
     # ユーザー追加
     $ sudo adduser ${user_name}
@@ -227,6 +233,7 @@
 <br>
 
 11. 作成したユーザーアカウントへのSSH接続設定を行う。
+<br>
     ```Bash
     # ユーザー切り替え
     $ su - ${user_name}
