@@ -43,11 +43,10 @@ credentialの記載された`.csv`ファイルをダウンロードする。
 <br>
 
 3. `.aws`を作成する。
-<br>
 
-    ```Bash
-    $ aws configure
-    ```
+```Bash
+$ aws configure
+```
 
 <br>
 
