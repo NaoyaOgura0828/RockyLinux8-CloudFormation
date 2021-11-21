@@ -23,10 +23,12 @@
 # Installation
 
 1. AWSへアクセスし、CloudFormation実行用IAMユーザーを作成する。
-   <br>
-   ユーザーポリシーは下記を推奨する。
-   <br>
-   但しポリシー要件によってAdmin権限が許可されない場合は構築リソースによって最小権限とする事。
+<br>
+ユーザーポリシーは下記を推奨する。
+<br>
+但しポリシー要件によってAdmin権限が許可されない場合は構築リソースによって最小権限とする事。
+<br>
+
     ```text
     # ユーザーポリシー
     arn:aws:iam::aws:policy/AdministratorAccess
@@ -35,20 +37,27 @@
 <br>
 
 2. `{作成したユーザー}`を選択し`認証情報`タブへ移動`アクセスキーの作成`を行う。
-   <br>
-   credentialの記載された`.csv`ファイルをダウンロードする。
+<br>
+credentialの記載された`.csv`ファイルをダウンロードする。
 
 <br>
 
 3. `.aws`を作成する。
+<br>
+
     ```Bash
     $ aws configure
     ```
-   **上記を実行すると`AWS Access Key ID`等の入力を求められるが、次のステップでファイルを編集するので何も入力せずに進む。**
+
+<br>
+
+**上記を実行すると`AWS Access Key ID`等の入力を求められるが、次のステップでファイルを編集するので何も入力せずに進む。**
 
 <br>
 
 4. `.csv`内に記載されている`Access key ID`及び`Secret access key`を`\.aws\credentials`内に転記する。
+<br>
+
     ```text
     # {環境名}は{dev|stg|prod}から任意に選択する。
     [RockyLinux8-{環境名}]
@@ -60,6 +69,8 @@
 <br>
 
 5. `Bash`で各`.sh`に権限を付与する。
+<br>
+
     ```Bash
     $ chmod +x ${ファイル名}
     ```
@@ -82,6 +93,7 @@
 <br>
 `\RockyLinux8\ami-build`及び`RockyLinux8\ec2`内の`{環境名}-parameters.json`へキーペア名を設定する。
 <br>
+
     ```json
             {
                 "ParameterKey": "KeyName",
@@ -95,6 +107,7 @@
 <br>
 `\RockyLinux8\network\{環境名}-parameters.json`に任意の`CIDR`を設定する。
 <br>
+
     ```json
     {
         "Parameters": [
@@ -124,6 +137,7 @@
 <br>
 `create_stacks.sh`内の**`# 最初に実行する`のみ**をコメントアウト解除する。
 <br>
+
     ```Bash
     #####################################
     # 最初に実行する
@@ -140,6 +154,7 @@
 5. リソースを構築する。
 <br>
 `Bash`で以下のコマンドを実行する。
+
     ```Bash
     $ ./create_stack.sh ${環境名}
     ```
@@ -154,6 +169,7 @@
 <br>
 **`ImageBuilder`によって`AMI`は自動で作成されるが時間がかかるので注意を要する。**
 <br>
+
     ```json
             {
                 "ParameterKey": "AMIID",
@@ -167,6 +183,7 @@
 <br>
 `create_stacks.sh`内の**`create_stack ec2`のみ**をコメントアウト解除する。
 <br>
+
     ```Bash
     #####################################
     # 最初に実行する
@@ -189,6 +206,7 @@
 8. EC2を構築する。
 <br>
    `Bash`で以下のコマンドを実行する。
+<br>
     ```Bash
     $ ./create_stack.sh ${環境名}
     ```
@@ -197,6 +215,7 @@
 
 9. EC2インスタンスへSSH接続後、Bashで以下の設定を行う。
 <br>
+
      ```Bash
      # 日本語設定を適用
      $ sodo localectl set-locale LANG=ja_JP.utf8
@@ -211,6 +230,7 @@
 
 10. Bashでユーザーアカウントを作成する。
 <br>
+
     ```Bash
     # ユーザー追加
     $ sudo adduser ${user_name}
@@ -234,6 +254,7 @@
 
 11. 作成したユーザーアカウントへのSSH接続設定を行う。
 <br>
+
     ```Bash
     # ユーザー切り替え
     $ su - ${user_name}
