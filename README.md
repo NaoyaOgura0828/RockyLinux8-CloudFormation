@@ -1,6 +1,6 @@
 # RockyLinux8-CloudFormation
 
-`RockyLinux8-CloudFormation`は`AWS CloudFormation`を利用し、`RockyLinux8`実行環境を構築する。
+`RockyLinux8-CloudFormation`は`AWS CloudFormation`を利用し、`Rocky Linux 8 (Official)`の実行環境を構築する。
 <br>
 また、本書は日本語デスクトップ環境のセットアップ手順を含む。
 
