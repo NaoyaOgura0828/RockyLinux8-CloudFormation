@@ -280,11 +280,17 @@ $ TOKEN=`curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-met
 
 ### 推奨される拡張機能
 - Dash to Panel
+- Panel OSD
 
 <br>
 
-### 推奨されるデスクトップログイン後GUI設定
+### 推奨されるデスクトップログイン後設定
 - Tweaks 設定
+- home直下ディレクトリ名を英語にする
+
+```Bash
+$ LANG=C xdg-user-dirs-gtk-update
+```
 
 <br>
 
