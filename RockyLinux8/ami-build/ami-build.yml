@@ -123,7 +123,7 @@ Resources:
                     - sudo systemctl start xrdp
                     - sudo dnf group install "Server with GUI" -y
                     - sudo dnf install gnome-tweak-tool -y
-                    - sudo dnf -y install langpacks-ja glibc-langpack-ja.x86_64
+                    - sudo dnf install langpacks-ja glibc-langpack-ja.x86_64 -y
                     - sudo dnf update -y
       Tags:
         Name: !Sub
