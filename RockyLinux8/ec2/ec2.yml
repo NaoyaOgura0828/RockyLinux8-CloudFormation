@@ -60,6 +60,13 @@ Resources:
       Tenancy: default
       EbsOptimized: false
       SourceDestCheck: true
+      BlockDeviceMappings:
+        - DeviceName: '/dev/sda1'
+          Ebs:
+            Encrypted: !Ref IsEncrypted
+            VolumeSize: !Ref VolumeSize
+            VolumeType: !Ref VolumeType
+            DeleteOnTermination: true
       HibernationOptions:
         Configured: false
       EnclaveOptions:
