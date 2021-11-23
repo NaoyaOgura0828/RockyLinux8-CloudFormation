@@ -279,8 +279,8 @@ $ TOKEN=`curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-met
 <br>
 
 ### 推奨される拡張機能
-- Dash to Panel
-- Panel OSD
+- Dash to Dock (DashをDock表示にする)
+- Panel OSD (通知表示エリアを設定できる)
 
 <br>
 
